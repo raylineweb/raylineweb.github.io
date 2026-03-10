@@ -67,8 +67,8 @@ export default function HeroSection() {
                         texts={words}
                         morphTime={1.2}
                         cooldownTime={2}
-                        className="h-[80px] md:h-[120px]"
-                        textClassName="font-black text-[72px] md:text-[104px] leading-none tracking-tight"
+                        className="h-[60px] md:h-[110px]"
+                        textClassName="font-black text-[52px] md:text-[96px] leading-none tracking-tight"
                     />
                 </motion.div>
 

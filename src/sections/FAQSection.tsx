@@ -132,7 +132,7 @@ export default function FAQSection() {
         <section
             id="faq"
             ref={ref}
-            className="relative bg-[#060608] py-28 overflow-hidden"
+            className="relative bg-[#060608] py-16 md:py-24 overflow-hidden"
         >
             {/* Top separator */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
