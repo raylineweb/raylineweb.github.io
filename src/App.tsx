@@ -47,10 +47,12 @@ function App() {
                             Back to top ↑
                         </a>
                         <a
-                            href="mailto:hello@raylinestudio.com"
+                            href="https://wa.me/917827599839?text=Hi%20Rayline%20Studio!%20I%20am%20interested%20in%20getting%20a%20website%20built.%20Can%20we%20discuss%20my%20project?"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="hover:text-foreground transition-colors"
                         >
-                            hello@raylinestudio.com
+                            WhatsApp Us
                         </a>
                     </div>
                 </div>

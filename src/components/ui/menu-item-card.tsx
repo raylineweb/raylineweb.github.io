@@ -123,10 +123,10 @@ const MenuItemCard = React.forwardRef<HTMLDivElement, MenuItemCardProps>(
                 {/* Content */}
                 <div className="flex flex-col flex-grow p-3.5 text-left">
                     <div className="flex items-baseline gap-2 flex-wrap">
-                        <span className="text-base font-bold text-foreground">₹{price}</span>
-                        <span className="text-xs line-through text-muted-foreground">₹{originalPrice}</span>
+                        <span className="text-base font-bold text-foreground">€{price}</span>
+                        <span className="text-xs line-through text-muted-foreground">€{originalPrice}</span>
                         {savings > 0 && (
-                            <span className="text-xs font-semibold text-green-400">SAVE ₹{savings}</span>
+                            <span className="text-xs font-semibold text-green-400">SAVE €{savings}</span>
                         )}
                     </div>
                     <p className="mt-0.5 text-xs text-muted-foreground">{quantity}</p>

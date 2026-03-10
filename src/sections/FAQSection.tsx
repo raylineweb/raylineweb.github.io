@@ -17,7 +17,7 @@ const faqs = [
     },
     {
         q: 'How much does a custom React website cost?',
-        a: 'A custom React website from Rayline Studio typically ranges from ₹80,000 to ₹4,00,000+ depending on complexity. A brochure site with animations starts around ₹80,000–₹1,50,000. A full-stack SaaS platform or e-commerce system starts at ₹2,00,000. We provide a detailed fixed-price proposal after a free discovery call — no surprise charges.',
+        a: 'A custom React website from Rayline Studio typically ranges from €800 to €15,000+ depending on complexity. A marketing or brochure site with premium animations starts at €800–€2,500. A full-stack SaaS platform, dashboard, or e-commerce system starts at €4,500. We provide a detailed fixed-price proposal after a free discovery call — no surprise charges.',
     },
     {
         q: 'How long does it take to build a professional website?',

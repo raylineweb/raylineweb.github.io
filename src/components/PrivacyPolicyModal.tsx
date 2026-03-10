@@ -91,10 +91,12 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyMod
                                 <p className="text-xs text-muted-foreground/60 pt-2 border-t border-white/5">
                                     Last updated: March 2026 &nbsp;·&nbsp; Questions?{' '}
                                     <a
-                                        href="mailto:hello@raylinestudio.com"
-                                        className="text-blue-400 hover:text-blue-300 transition-colors"
+                                        href="https://wa.me/917827599839?text=Privacy%20Policy%20Question"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-green-400 hover:text-green-300 transition-colors"
                                     >
-                                        hello@raylinestudio.com
+                                        Message us on WhatsApp
                                     </a>
                                 </p>
                             </div>
