@@ -1,0 +1,14 @@
+# Cache static Next.js assets permanently
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache media assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — revalidate frequently
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin

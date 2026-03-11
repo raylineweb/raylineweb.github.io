@@ -1,23 +1,25 @@
-import { useState } from 'react'
-import Navbar from '@/components/Navbar'
-import HeroSection from '@/sections/HeroSection'
-import GlobalReachSection from '@/sections/GlobalReachSection'
-import IndustrySection from '@/sections/IndustrySection'
-import ShowcaseSection from '@/sections/ShowcaseSection'
-import SocialProofSection from '@/sections/SocialProofSection'
-import SplineSection from '@/sections/SplineSection'
-import FAQSection from '@/sections/FAQSection'
-import PricingSection from '@/sections/PricingSection'
-import CTASection from '@/sections/CTASection'
-import PrivacyPolicyModal from '@/components/PrivacyPolicyModal'
-import QuotationChat from '@/sections/QuotationChat'
+"use client"
+
+import { useState } from "react"
+import Navbar from "@/components/Navbar"
+import HeroSection from "@/sections/HeroSection"
+import GlobalReachSection from "@/sections/GlobalReachSection"
+import IndustrySection from "@/sections/IndustrySection"
+import ShowcaseSection from "@/sections/ShowcaseSection"
+import SocialProofSection from "@/sections/SocialProofSection"
+import SplineSection from "@/sections/SplineSection"
+import FAQSection from "@/sections/FAQSection"
+import PricingSection from "@/sections/PricingSection"
+import CTASection from "@/sections/CTASection"
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal"
+import QuotationChat from "@/sections/QuotationChat"
 
 interface SelectedPlan {
     name: string
     price: string
 }
 
-function App() {
+export default function HomePage() {
     const [privacyOpen, setPrivacyOpen] = useState(false)
     const [selectedPlan, setSelectedPlan] = useState<SelectedPlan | null>(null)
 
@@ -81,10 +83,7 @@ function App() {
                 </div>
             </footer>
 
-            {/* Privacy policy modal — rendered at root to avoid z-index issues */}
             <PrivacyPolicyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
         </div>
     )
 }
-
-export default App
