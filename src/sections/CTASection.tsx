@@ -1,17 +1,18 @@
 import { useRef } from 'react'
 import { motion, useInView, type Variants } from 'framer-motion'
 import { ShaderAnimation } from '@/components/ui/shader-animation'
-import { ArrowRight, MessageCircle } from 'lucide-react'
-
-const WA_LINK =
-    'https://wa.me/917827599839?text=Hi%20Rayline%20Studio!%20I%20am%20interested%20in%20getting%20a%20website%20built.%20Can%20we%20discuss%20my%20project?'
+import { ArrowRight } from 'lucide-react'
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
 }
 
-export default function CTASection() {
+interface CTASectionProps {
+    onGetQuote: () => void
+}
+
+export default function CTASection({ onGetQuote }: CTASectionProps) {
     const ref = useRef<HTMLDivElement>(null)
     const isInView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -63,17 +64,14 @@ export default function CTASection() {
 
                         {/* Action buttons */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                            {/* WhatsApp primary CTA */}
-                            <a
-                                href={WA_LINK}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm bg-[#25D366] text-white hover:bg-[#22c55e] active:scale-95 transition-all duration-200 shadow-xl shadow-[#25D366]/30"
+                            {/* Primary CTA — Get a Quote */}
+                            <button
+                                onClick={onGetQuote}
+                                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm bg-violet-600 text-white hover:bg-violet-500 active:scale-95 transition-all duration-200 shadow-xl shadow-violet-500/25"
                             >
-                                <MessageCircle className="w-4 h-4" />
-                                Start Your Project on WhatsApp
+                                Get a Quote
                                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                            </a>
+                            </button>
 
                             <a
                                 href="#showcase"

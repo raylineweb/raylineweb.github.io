@@ -7,12 +7,20 @@ import ShowcaseSection from '@/sections/ShowcaseSection'
 import SocialProofSection from '@/sections/SocialProofSection'
 import SplineSection from '@/sections/SplineSection'
 import FAQSection from '@/sections/FAQSection'
+import PricingSection from '@/sections/PricingSection'
 import CTASection from '@/sections/CTASection'
-import WhatsAppFAB from '@/components/WhatsAppFAB'
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal'
+import QuotationQuestionnaire from '@/sections/QuotationQuestionnaire'
 
 function App() {
     const [privacyOpen, setPrivacyOpen] = useState(false)
+    const [showQuote, setShowQuote] = useState(false)
+
+    if (showQuote) {
+        return (
+            <QuotationQuestionnaire onBack={() => setShowQuote(false)} />
+        )
+    }
 
     return (
         <div
@@ -29,7 +37,8 @@ function App() {
                 <SocialProofSection />
                 <SplineSection />
                 <FAQSection />
-                <CTASection />
+                <PricingSection onGetQuote={() => setShowQuote(true)} />
+                <CTASection onGetQuote={() => setShowQuote(true)} />
             </main>
 
             {/* Footer */}
@@ -46,20 +55,15 @@ function App() {
                         <a href="#hero" className="hover:text-foreground transition-colors">
                             Back to top ↑
                         </a>
-                        <a
-                            href="https://wa.me/917827599839?text=Hi%20Rayline%20Studio!%20I%20am%20interested%20in%20getting%20a%20website%20built.%20Can%20we%20discuss%20my%20project?"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-foreground transition-colors"
+                        <button
+                            onClick={() => setShowQuote(true)}
+                            className="hover:text-foreground transition-colors underline-offset-2 hover:underline"
                         >
-                            WhatsApp Us
-                        </a>
+                            Get a Quote
+                        </button>
                     </div>
                 </div>
             </footer>
-
-            {/* Fixed floating WhatsApp button — always on top */}
-            <WhatsAppFAB />
 
             {/* Privacy policy modal — rendered at root to avoid z-index issues */}
             <PrivacyPolicyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
