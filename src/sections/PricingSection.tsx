@@ -1,7 +1,7 @@
 import { Pricing } from "@/components/ui/pricing"
 
 interface PricingSectionProps {
-    onGetQuote: () => void
+    onGetQuote: (plan: { name: string; price: string }) => void
 }
 
 const STARTER_FEATURES = [

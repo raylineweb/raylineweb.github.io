@@ -9,7 +9,7 @@ const fadeUp: Variants = {
 }
 
 interface CTASectionProps {
-    onGetQuote: () => void
+    onGetQuote: (plan: { name: string; price: string }) => void
 }
 
 export default function CTASection({ onGetQuote }: CTASectionProps) {
@@ -66,7 +66,7 @@ export default function CTASection({ onGetQuote }: CTASectionProps) {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                             {/* Primary CTA — Get a Quote */}
                             <button
-                                onClick={onGetQuote}
+                                onClick={() => onGetQuote({ name: "Scaling", price: "299" })}
                                 className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm bg-violet-600 text-white hover:bg-violet-500 active:scale-95 transition-all duration-200 shadow-xl shadow-violet-500/25"
                             >
                                 Get a Quote

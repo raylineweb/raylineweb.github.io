@@ -21,7 +21,7 @@ interface PricingPlan {
     buttonText: string
     isPopular: boolean
     savingsLabel: string
-    onGetQuote: () => void
+    onGetQuote: (plan: { name: string; price: string }) => void
 }
 
 interface PricingProps {
@@ -199,7 +199,7 @@ export function Pricing({
 
                         {/* CTA button */}
                         <button
-                            onClick={plan.onGetQuote}
+                            onClick={() => plan.onGetQuote({ name: plan.name, price: String(plan.price) })}
                             className={cn(
                                 buttonVariants({ variant: "outline" }),
                                 "w-full text-sm font-semibold tracking-wide py-5",

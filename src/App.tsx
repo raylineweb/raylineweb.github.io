@@ -10,15 +10,31 @@ import FAQSection from '@/sections/FAQSection'
 import PricingSection from '@/sections/PricingSection'
 import CTASection from '@/sections/CTASection'
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal'
-import QuotationQuestionnaire from '@/sections/QuotationQuestionnaire'
+import QuotationChat from '@/sections/QuotationChat'
+
+interface SelectedPlan {
+    name: string
+    price: string
+}
 
 function App() {
     const [privacyOpen, setPrivacyOpen] = useState(false)
-    const [showQuote, setShowQuote] = useState(false)
+    const [selectedPlan, setSelectedPlan] = useState<SelectedPlan | null>(null)
 
-    if (showQuote) {
+    const handleGetQuote = (plan: SelectedPlan) => {
+        setSelectedPlan(plan)
+    }
+
+    const handleBack = () => {
+        setSelectedPlan(null)
+    }
+
+    if (selectedPlan) {
         return (
-            <QuotationQuestionnaire onBack={() => setShowQuote(false)} />
+            <QuotationChat
+                selectedPlan={selectedPlan}
+                onBack={handleBack}
+            />
         )
     }
 
@@ -37,8 +53,8 @@ function App() {
                 <SocialProofSection />
                 <SplineSection />
                 <FAQSection />
-                <PricingSection onGetQuote={() => setShowQuote(true)} />
-                <CTASection onGetQuote={() => setShowQuote(true)} />
+                <PricingSection onGetQuote={handleGetQuote} />
+                <CTASection onGetQuote={() => handleGetQuote({ name: "Scaling", price: "299" })} />
             </main>
 
             {/* Footer */}
@@ -56,7 +72,7 @@ function App() {
                             Back to top ↑
                         </a>
                         <button
-                            onClick={() => setShowQuote(true)}
+                            onClick={() => handleGetQuote({ name: "Scaling", price: "299" })}
                             className="hover:text-foreground transition-colors underline-offset-2 hover:underline"
                         >
                             Get a Quote
